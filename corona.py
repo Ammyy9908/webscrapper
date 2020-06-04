@@ -16,7 +16,6 @@ print("Active Case : {}".format(active))
 print("Total Discharged: {}".format(discharge))
 print("Total Deaths: {}".format(deaths))
 print("Migrated : {}".format(migrated))
-
 states_name = soup.find('div',{'id':'stateCount'}).findAll('span',{'class':'st_name'})
 states_count = soup.find('div',{'id':'stateCount'}).findAll('span',{'class':'st_number'})
 print("\nState Wise Report:")

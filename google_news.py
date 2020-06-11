@@ -8,9 +8,9 @@ import time
 
 
 def send_to_email(news):
-      from_address = '1mv19is404@sirmvit.edu'
+      from_address = 'senderEmail'
       # list of users
-      recpient_list = ['sb78639@gmail.com','1mv19is403@sirmvit.edu','tabhishek2007@gmail.com']
+      recpient_list = ['useremail1','useremail2','useremail2']
       msg = MIMEMultipart()
       msg['From']=formataddr((str(Header('PythoNews', 'utf-8')), '1mv19is404@sirmvit.edu'))
       
@@ -50,7 +50,7 @@ def send_to_email(news):
       s.ehlo()
       s.starttls()
       s.ehlo()
-      s.login(from_address,'sirmvit123')
+      s.login(from_address,'Sender Password')
       text = msg.as_string()
       for i in recpient_list:
             msg['To']=i
@@ -63,7 +63,8 @@ def send_to_email(news):
       
 
 
-url = 'https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=77fcc3b8e0e44caa9df1f04080fb1fdf'
+url = 'https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=<Your Api Comes Here>'
+# you can got api from this website:https://newsapi.org
 
 response = requests.get(url)
 data = response.json()
